@@ -1,0 +1,26 @@
+# nRF52840 MDK USB Dongle board configuration
+#
+# Copyright (c) 2018 Nordic Semiconductor ASA
+#
+# Copyright (c) 2022 Nikola Trifunovic
+#
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_PITAYA_GO
+
+config BOARD
+	default "nrf52840_pitaya_go"
+
+
+if USB_DEVICE_STACK
+
+# Enable UART driver, needed for CDC ACM
+config SERIAL
+	default y
+
+endif # USB_DEVICE_STACK
+
+config BT_CTLR
+	default BT
+
+endif # BOARD_PITAYA_GO
